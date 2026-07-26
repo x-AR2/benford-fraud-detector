@@ -5,8 +5,8 @@ CHI2_CRITICAL_VALUE = 15.51    # chi-square critical value, df=8, p=0.05
 
 
 def mean_absolute_deviation(observed_pct, expected_pct):
-    """Average absolute percentage-point difference across all 9 digits."""
-    diffs = [abs(observed_pct[d] - expected_pct[d]) for d in range(1, 10)]
+    """Average absolute percentage-point difference across all digits."""
+    diffs = [abs(observed_pct[d] - expected_pct[d]) for d in observed_pct]
     return sum(diffs) / len(diffs)
 
 
@@ -16,7 +16,7 @@ def chi_square_statistic(observed_counts, expected_pct, total):
     expected_count for digit d = expected_pct[d]/100 * total
     """
     chi2 = 0.0
-    for d in range(1, 10):
+    for d in observed_counts:
         expected_count = (expected_pct[d] / 100) * total
         if expected_count == 0:
             continue
