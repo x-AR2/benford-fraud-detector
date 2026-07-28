@@ -90,7 +90,7 @@ Digit 1:  Expected 30.1%   Observed 28.4%
 | *(default, no flag needed)* | Mean Absolute Deviation (MAD) | Quick, simple check |
 | `--test chi2` | Chi-Square Test | Stricter, more statistically formal |
 
-You choose the method — the tool does not pick automatically.
+You choose the method or the tool picks automatically (based on sample size)
 
 ## Important Note
 
