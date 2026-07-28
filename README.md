@@ -1,7 +1,7 @@
 # Benford's Law Fraud Detector
 
 A command-line tool that checks whether a set of numbers looks "natural" or
-"teampered" using a real math trick used in fraud audits: **Benford's Law**.
+"tampered" using a real math trick used in fraud audits: **Benford's Law**.
 
 ## What It Does
 
