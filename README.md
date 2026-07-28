@@ -1,18 +1,18 @@
 # Benford's Law Fraud Detector
 
 A command-line tool that checks whether a set of numbers looks "natural" or
-"faked" using a real math trick used in fraud audits: **Benford's Law**.
+"teampered" using a real math trick used in fraud audits: **Benford's Law**.
 
 ## What It Does
 
 In most real-world data (populations, prices, expenses), numbers starting
 with **1** show up far more often than numbers starting with **9**. This
-tool checks if your data follows that natural pattern. If it doesn't,
-that's a red flag for manufactured or tampered numbers.
+tool checks if your data follows that natural pattern. Following the law which predicts
+accurately that the leading digit is likely to be small.
 
 ## Requirements
 
-- Python 3 installed on your computer (check with `python3 --version`)
+- Python  installed on your computer (check with `python --version`)
 - No installation needed — no extra packages required
 
 ## Setup
@@ -29,32 +29,32 @@ Copy-paste any of these commands:
 
 ### 1. See a "natural" example (this should PASS)
 ```
-python3 main.py --generate natural
+python main.py --generate natural
 ```
 
 ### 2. See a "fake/random" example (this should FAIL)
 ```
-python3 main.py --generate random --test chi2
+python main.py --generate random --test chi2
 ```
 
 ### 3. Test real data (world population by country)
 ```
-python3 main.py --file sample_data/world_populations.csv --column population --verbose
+python main.py --file sample_data/world_populations.csv --column population --verbose
 ```
 
 ### 4. Test tampered data (fake expense report)
 ```
-python3 main.py --file sample_data/tampered_expenses.csv --column amount --verbose --test chi2
+python main.py --file sample_data/tampered_expenses.csv --column amount --verbose --test chi2
 ```
 
-> If `python3` doesn't work, try `python` instead.
+> If `python` doesn't work, try `python3` instead.
 
 ## Testing Your Own Data
 
 1. Put your numbers in a CSV file with a column header (e.g. `amount`).
 2. Run:
    ```
-   python3 main.py --file yourfile.csv --column amount --verbose
+   python main.py --file yourfile.csv --column amount --verbose
    ```
 
 ## Reading the Output
@@ -90,7 +90,7 @@ Digit 1:  Expected 30.1%   Observed 28.4%
 | *(default, no flag needed)* | Mean Absolute Deviation (MAD) | Quick, simple check |
 | `--test chi2` | Chi-Square Test | Stricter, more statistically formal |
 
-You choose the method — the tool does not pick automatically.
+You choose the method or the tool picks automatically (based on sample size)
 
 ## Important Note
 
